@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/logo.svg" alt="crew-wright logo" width="100%" style="max-width: 840px;" />
+</p>
+
 # crew-wright: a multi-agent crew for your coding agent
 
 `crew-wright` is an open-source agent skill that orchestrates a coordinated team of specialist sub-agents to deliver non-trivial software engineering tasks from start to finish. Instead of relying on a single context window to juggle architecture, implementation, critique, and testing all at once, `crew-wright` decomposes the goal into bounded task waves, assigns specialized roles (planners, designers, modular coders, blind reviewers, testers, security auditors), coordinates shared interfaces via a binding contract, and enforces evidence-based verification before anything is marked done.
@@ -197,6 +201,9 @@ node evals/evaluate.js --case case-1-cli-table --workspace /path/to/workspace
 crew-wright/
 ├── README.md                      # Documentation and quick start
 ├── LICENSE                        # MIT License (2026)
+├── assets/
+│   ├── logo.svg                   # Coder-style logo & header banner
+│   └── logo-icon.svg              # Standalone geometric crest icon
 ├── skills/
 │   └── crew-wright/
 │       ├── SKILL.md               # Main orchestrator (under 500 lines)
