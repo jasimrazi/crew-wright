@@ -10,6 +10,10 @@
 >
 > **Independence Notice**: `crew-wright` is an independent, open-source project. It is not affiliated with, sponsored by, or associated with CrewAI Inc. or any other commercial "crew" framework.
 
+<p align="center">
+  <img src="assets/features.svg" alt="crew-wright architecture and core pillars" width="100%" style="max-width: 840px;" />
+</p>
+
 ---
 
 ## Quick Start & Installation
@@ -49,6 +53,10 @@ The skill is designed to activate automatically when a task requires coordinatio
 ## Lifecycle Phase Diagram
 
 `crew-wright` moves through 8 well-defined phases to ensure quality and prevent parallel work collisions:
+
+<p align="center">
+  <img src="assets/workflow.svg" alt="crew-wright 8-phase lifecycle pipeline" width="100%" style="max-width: 840px;" />
+</p>
 
 ```text
 +-------------------------------------------------------------------------+
@@ -203,7 +211,9 @@ crew-wright/
 ├── LICENSE                        # MIT License (2026)
 ├── assets/
 │   ├── logo.svg                   # Coder-style logo & header banner
-│   └── logo-icon.svg              # Standalone geometric crest icon
+│   ├── logo-icon.svg              # Standalone geometric crest icon
+│   ├── features.svg               # Core architecture & pillars infographic
+│   └── workflow.svg               # 8-phase quality-gated pipeline graphic
 ├── skills/
 │   └── crew-wright/
 │       ├── SKILL.md               # Main orchestrator (under 500 lines)

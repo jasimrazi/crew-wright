@@ -1,0 +1,223 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 460" width="100%" height="460" fill="none">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="feat-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#08080B" />
+      <stop offset="50%" stop-color="#0E0E14" />
+      <stop offset="100%" stop-color="#08080B" />
+    </linearGradient>
+
+    <!-- Card Backgrounds -->
+    <linearGradient id="card-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#120F1D" />
+      <stop offset="100%" stop-color="#09080E" />
+    </linearGradient>
+
+    <!-- Outer Border -->
+    <linearGradient id="feat-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#36304A" />
+      <stop offset="50%" stop-color="#1E1A2C" />
+      <stop offset="100%" stop-color="#36304A" />
+    </linearGradient>
+
+    <!-- Card Borders -->
+    <linearGradient id="card-border-yellow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EEFC00" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#2D2640" />
+    </linearGradient>
+
+    <linearGradient id="card-border-lavender" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C4B5FD" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#2D2640" />
+    </linearGradient>
+
+    <!-- Title Gradient -->
+    <linearGradient id="heading-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="60%" stop-color="#F1F5F9" />
+      <stop offset="100%" stop-color="#C4B5FD" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    .mono { font-family: ui-monospace, SFMono-Regular, "JetBrains Mono", Menlo, Consolas, monospace; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, sans-serif; }
+    .head-title { font-size: 24px; font-weight: 800; fill: url(#heading-grad); letter-spacing: -0.3px; }
+    .head-tag { font-size: 10px; font-weight: 700; fill: #EEFC00; letter-spacing: 1px; }
+    .head-desc { font-size: 13px; fill: #94A3B8; }
+    .card-title { font-size: 16px; font-weight: 700; fill: #FFFFFF; letter-spacing: -0.2px; }
+    .card-pill { font-size: 9.5px; font-weight: 700; letter-spacing: 0.6px; }
+    .card-body { font-size: 12.5px; fill: #A5A1B8; line-height: 18px; }
+    .card-tag { font-size: 10px; font-weight: 600; }
+    .bottom-tag { font-size: 11px; font-weight: 600; fill: #C4B5FD; letter-spacing: 0.5px; }
+  </style>
+
+  <!-- Container Box -->
+  <rect x="1.5" y="1.5" width="837" height="457" rx="14" fill="url(#feat-bg)" stroke="url(#feat-border)" stroke-width="1.5" />
+
+  <!-- Subtle Background Grid -->
+  <g opacity="0.03" stroke="#C4B5FD" stroke-width="1">
+    <line x1="20" y1="50" x2="820" y2="50" />
+    <line x1="20" y1="100" x2="820" y2="100" />
+    <line x1="20" y1="150" x2="820" y2="150" />
+    <line x1="20" y1="200" x2="820" y2="200" />
+    <line x1="20" y1="250" x2="820" y2="250" />
+    <line x1="20" y1="300" x2="820" y2="300" />
+    <line x1="20" y1="350" x2="820" y2="350" />
+    <line x1="20" y1="400" x2="820" y2="400" />
+    <line x1="120" y1="20" x2="120" y2="440" />
+    <line x1="240" y1="20" x2="240" y2="440" />
+    <line x1="360" y1="20" x2="360" y2="440" />
+    <line x1="480" y1="20" x2="480" y2="440" />
+    <line x1="600" y1="20" x2="600" y2="440" />
+    <line x1="720" y1="20" x2="720" y2="440" />
+  </g>
+
+  <!-- ==================== HEADER ==================== -->
+  <g transform="translate(30, 24)">
+    <!-- Pill -->
+    <rect x="0" y="0" width="168" height="20" rx="10" fill="#1C182B" stroke="#36304A" stroke-width="1" />
+    <circle cx="10" cy="10" r="3" fill="#EEFC00" />
+    <text x="20" y="14" class="mono head-tag">CORE ARCHITECTURE</text>
+
+    <!-- Title & Subtitle -->
+    <text x="0" y="44" class="sans head-title">Engineered for Multi-Agent Precision</text>
+    <text x="0" y="63" class="sans head-desc">Sub-agents begin with clean context windows. Structured artifacts prevent collisions and hallucinated progress.</text>
+  </g>
+
+  <!-- ==================== 4 CORE CARDS GRID ==================== -->
+
+  <!-- CARD 1: CONTRACT-DRIVEN (Top Left) -->
+  <g transform="translate(30, 102)">
+    <rect x="0" y="0" width="375" height="145" rx="10" fill="url(#card-bg)" stroke="url(#card-border-yellow)" stroke-width="1.2" />
+    
+    <!-- Icon Box -->
+    <rect x="16" y="16" width="36" height="36" rx="8" fill="#1E192E" stroke="#3A3055" stroke-width="1" />
+    <path d="M26,25 L38,25 M26,30 L42,30 M26,35 L34,35 M40,38 L43,41 L47,35" 
+          stroke="#EEFC00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Card Badge -->
+    <rect x="62" y="18" width="120" height="18" rx="9" fill="#191526" stroke="#32294A" stroke-width="1" />
+    <text x="70" y="30" class="mono card-pill" fill="#EEFC00">PHASE 2 &#8226; CONTRACT</text>
+
+    <!-- Card Title -->
+    <text x="62" y="48" class="sans card-title">Shared Interface Ground Truth</text>
+
+    <!-- Description -->
+    <text x="16" y="78" class="sans card-body">
+      <tspan x="16" dy="0">Writes </tspan>
+      <tspan fill="#F8FAFC" font-weight="600">.crew/contract.md</tspan>
+      <tspan> before coding starts. Defines</tspan>
+      <tspan x="16" dy="18">exact signatures, schemas, and binding numbered</tspan>
+      <tspan x="16" dy="18">rulings. Prevents cross-module integration drift.</tspan>
+    </text>
+
+    <!-- Bottom Metric Tag -->
+    <rect x="16" y="118" width="128" height="18" rx="4" fill="#0C0A14" stroke="#252038" stroke-width="1" />
+    <text x="24" y="130" class="mono card-tag" fill="#EEFC00">ZERO INTERFACE DRIFT</text>
+  </g>
+
+  <!-- CARD 2: WAVE CONCURRENCY & DISJOINT OWNERSHIP (Top Right) -->
+  <g transform="translate(435, 102)">
+    <rect x="0" y="0" width="375" height="145" rx="10" fill="url(#card-bg)" stroke="url(#card-border-lavender)" stroke-width="1.2" />
+    
+    <!-- Icon Box -->
+    <rect x="16" y="16" width="36" height="36" rx="8" fill="#1E192E" stroke="#3A3055" stroke-width="1" />
+    <path d="M24,26 L44,26 M24,34 L38,34 M24,42 L44,42" 
+          stroke="#C4B5FD" stroke-width="2" stroke-linecap="round" />
+    <circle cx="44" cy="26" r="2.5" fill="#EEFC00" />
+    <circle cx="38" cy="34" r="2.5" fill="#C4B5FD" />
+    <circle cx="44" cy="42" r="2.5" fill="#EEFC00" />
+
+    <!-- Card Badge -->
+    <rect x="62" y="18" width="134" height="18" rx="9" fill="#191526" stroke="#32294A" stroke-width="1" />
+    <text x="70" y="30" class="mono card-pill" fill="#C4B5FD">PHASE 3 &#8226; WAVES</text>
+
+    <!-- Card Title -->
+    <text x="62" y="48" class="sans card-title">Disjoint File Ownership</text>
+
+    <!-- Description -->
+    <text x="16" y="78" class="sans card-body">
+      <tspan x="16" dy="0">Tasks run in parallel waves with mutually disjoint</tspan>
+      <tspan x="16" dy="18" fill="#F8FAFC" font-weight="600">files_owned</tspan>
+      <tspan>. No two concurrent coders edit the same</tspan>
+      <tspan x="16" dy="18">file, eliminating overwrite races and merge conflicts.</tspan>
+    </text>
+
+    <!-- Bottom Metric Tag -->
+    <rect x="16" y="118" width="138" height="18" rx="4" fill="#0C0A14" stroke="#252038" stroke-width="1" />
+    <text x="24" y="130" class="mono card-tag" fill="#C4B5FD">100% COLLISION-FREE</text>
+  </g>
+
+  <!-- CARD 3: BLIND ADVERSARIAL REVIEW (Bottom Left) -->
+  <g transform="translate(30, 260)">
+    <rect x="0" y="0" width="375" height="145" rx="10" fill="url(#card-bg)" stroke="url(#card-border-lavender)" stroke-width="1.2" />
+    
+    <!-- Icon Box -->
+    <rect x="16" y="16" width="36" height="36" rx="8" fill="#1E192E" stroke="#3A3055" stroke-width="1" />
+    <circle cx="32" cy="32" r="7" stroke="#C4B5FD" stroke-width="1.8" />
+    <line x1="37" y1="37" x2="44" y2="44" stroke="#C4B5FD" stroke-width="2" stroke-linecap="round" />
+    <path d="M29,32 L35,32 M32,29 L32,35" stroke="#EEFC00" stroke-width="1.2" />
+
+    <!-- Card Badge -->
+    <rect x="62" y="18" width="134" height="18" rx="9" fill="#191526" stroke="#32294A" stroke-width="1" />
+    <text x="70" y="30" class="mono card-pill" fill="#C4B5FD">PHASE 4 &#8226; BLIND REVIEW</text>
+
+    <!-- Card Title -->
+    <text x="62" y="48" class="sans card-title">Unprimed Adversarial Audit</text>
+
+    <!-- Description -->
+    <text x="16" y="78" class="sans card-body">
+      <tspan x="16" dy="0">Reviewers receive code diffs and contract criteria</tspan>
+      <tspan x="16" dy="18" fill="#EEFC00" font-weight="600">WITHOUT</tspan>
+      <tspan> author summaries. Defect triage uses</tspan>
+      <tspan x="16" dy="18">tagged MUST-FIX, SHOULD-FIX, and NIT coordinates.</tspan>
+    </text>
+
+    <!-- Bottom Metric Tag -->
+    <rect x="16" y="118" width="146" height="18" rx="4" fill="#0C0A14" stroke="#252038" stroke-width="1" />
+    <text x="24" y="130" class="mono card-tag" fill="#C4B5FD">DUAL LENSES + SECURITY</text>
+  </g>
+
+  <!-- CARD 4: EVIDENCE-GATED TESTS (Bottom Right) -->
+  <g transform="translate(435, 260)">
+    <rect x="0" y="0" width="375" height="145" rx="10" fill="url(#card-bg)" stroke="url(#card-border-yellow)" stroke-width="1.2" />
+    
+    <!-- Icon Box -->
+    <rect x="16" y="16" width="36" height="36" rx="8" fill="#1E192E" stroke="#3A3055" stroke-width="1" />
+    <path d="M26,27 L34,23 L42,27 L42,34 Q42,41 34,45 Q26,41 26,34 Z" 
+          fill="none" stroke="#EEFC00" stroke-width="1.8" />
+    <path d="M30,34 L33,37 L38,31" stroke="#EEFC00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Card Badge -->
+    <rect x="62" y="18" width="134" height="18" rx="9" fill="#191526" stroke="#32294A" stroke-width="1" />
+    <text x="70" y="30" class="mono card-pill" fill="#EEFC00">PHASE 5 &#8226; EVIDENCE</text>
+
+    <!-- Card Title -->
+    <text x="62" y="48" class="sans card-title">Evidence-Gated Proof</text>
+
+    <!-- Description -->
+    <text x="16" y="78" class="sans card-body">
+      <tspan x="16" dy="0">"Done" requires real terminal stdout and exit code 0</tspan>
+      <tspan x="16" dy="18">logged in </tspan>
+      <tspan fill="#F8FAFC" font-weight="600">.crew/test-report.md</tspan>
+      <tspan>. Mutation testing</tspan>
+      <tspan x="16" dy="18">validates that test assertions catch planted bugs.</tspan>
+    </text>
+
+    <!-- Bottom Metric Tag -->
+    <rect x="16" y="118" width="144" height="18" rx="4" fill="#0C0A14" stroke="#252038" stroke-width="1" />
+    <text x="24" y="130" class="mono card-tag" fill="#EEFC00">MUTATION TESTED &#8226; EXIT 0</text>
+  </g>
+
+  <!-- ==================== BOTTOM STATUS STRIP ==================== -->
+  <g transform="translate(30, 426)">
+    <line x1="0" y1="0" x2="780" y2="0" stroke="#1E1A2C" stroke-width="1" />
+    <text x="0" y="18" class="mono bottom-tag">
+      <tspan fill="#EEFC00">&#8226;</tspan> 9 SPECIALIST ROLES 
+      <tspan fill="#64748B"> &#8226; </tspan> RESUMABLE STATE (.crew/state.json) 
+      <tspan fill="#64748B"> &#8226; </tspan> 2-ROUND FIX CAP 
+      <tspan fill="#64748B"> &#8226; </tspan> EXTENSIBLE ROLES (.crew/roles/)
+    </text>
+  </g>
+</svg>
