@@ -1,56 +1,60 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 210" width="100%" height="210" fill="none">
   <defs>
-    <!-- Background Gradients: Deep Obsidian & Carbon Forge -->
+    <!-- Background: Google AI Dark Slate -->
     <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0B090E" />
-      <stop offset="50%" stop-color="#14111B" />
-      <stop offset="100%" stop-color="#0B090E" />
+      <stop offset="0%" stop-color="#0E121B" />
+      <stop offset="50%" stop-color="#131622" />
+      <stop offset="100%" stop-color="#0E121B" />
     </linearGradient>
     
     <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#382F45" />
-      <stop offset="50%" stop-color="#241E2F" />
-      <stop offset="100%" stop-color="#382F45" />
+      <stop offset="0%" stop-color="#384358" />
+      <stop offset="50%" stop-color="#242B3A" />
+      <stop offset="100%" stop-color="#384358" />
     </linearGradient>
 
-    <!-- Warm Forge & Amber Flame Gradients -->
-    <linearGradient id="wright-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#F59E0B" />
-      <stop offset="50%" stop-color="#FB923C" />
-      <stop offset="100%" stop-color="#F43F5E" />
+    <!-- Signature Gemini Gradient: Blue -> Indigo -> Purple -> Fuchsia -->
+    <linearGradient id="gemini-title-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4285F4" />
+      <stop offset="32%" stop-color="#6366F1" />
+      <stop offset="68%" stop-color="#A855F7" />
+      <stop offset="100%" stop-color="#EC4899" />
     </linearGradient>
 
-    <linearGradient id="icon-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#D97706" />
-      <stop offset="50%" stop-color="#F59E0B" />
-      <stop offset="100%" stop-color="#FB923C" />
+    <linearGradient id="gemini-icon-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A73E8" />
+      <stop offset="35%" stop-color="#4285F4" />
+      <stop offset="70%" stop-color="#9333EA" />
+      <stop offset="100%" stop-color="#EC4899" />
     </linearGradient>
 
-    <radialGradient id="radial-glow" cx="105" cy="105" r="100" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.18" />
-      <stop offset="60%" stop-color="#F43F5E" stop-opacity="0.04" />
-      <stop offset="100%" stop-color="#0B090E" stop-opacity="0" />
+    <!-- Gemini Radial Ambience Glow -->
+    <radialGradient id="gemini-glow" cx="105" cy="105" r="105" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4285F4" stop-opacity="0.22" />
+      <stop offset="50%" stop-color="#9333EA" stop-opacity="0.10" />
+      <stop offset="85%" stop-color="#EC4899" stop-opacity="0.03" />
+      <stop offset="100%" stop-color="#0E121B" stop-opacity="0" />
     </radialGradient>
   </defs>
 
   <style>
     .mono { font-family: ui-monospace, SFMono-Regular, "JetBrains Mono", Menlo, Consolas, monospace; }
     .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, sans-serif; }
-    .title-crew { font-weight: 800; font-size: 42px; fill: #FAF8FC; letter-spacing: -0.5px; }
-    .title-wright { font-weight: 800; font-size: 42px; fill: url(#wright-grad); letter-spacing: -0.5px; }
-    .badge-text { font-size: 10px; font-weight: 600; fill: #B4A9C4; letter-spacing: 0.8px; }
-    .subtext { font-size: 13.5px; fill: #A59BAF; font-weight: 400; }
-    .code-prompt { font-size: 13px; font-weight: 600; fill: #F59E0B; }
-    .code-cmd { font-size: 13px; font-weight: 500; fill: #F5F3F7; }
-    .code-arg { font-size: 13px; font-weight: 500; fill: #FDE68A; }
-    .feature-tag { font-size: 11px; font-weight: 500; fill: #8F839E; }
+    .title-crew { font-weight: 800; font-size: 42px; fill: #F8FAFC; letter-spacing: -0.5px; }
+    .title-wright { font-weight: 800; font-size: 42px; fill: url(#gemini-title-grad); letter-spacing: -0.5px; }
+    .badge-text { font-size: 10px; font-weight: 600; fill: #94A3B8; letter-spacing: 0.8px; }
+    .subtext { font-size: 13.5px; fill: #94A3B8; font-weight: 400; }
+    .code-prompt { font-size: 13px; font-weight: 600; fill: #4285F4; }
+    .code-cmd { font-size: 13px; font-weight: 500; fill: #F1F5F9; }
+    .code-arg { font-size: 13px; font-weight: 500; fill: #C084FC; }
+    .feature-tag { font-size: 11px; font-weight: 500; fill: #A5B4FC; }
   </style>
 
   <!-- Container Box with Border -->
   <rect x="1.5" y="1.5" width="837" height="207" rx="14" fill="url(#bg-grad)" stroke="url(#border-grad)" stroke-width="1.5" />
 
-  <!-- Subtle Blueprint Grid Pattern in Background -->
-  <g opacity="0.05" stroke="#F59E0B" stroke-width="1">
+  <!-- Subtle Gemini Grid Traces in Background -->
+  <g opacity="0.05" stroke="#4285F4" stroke-width="1">
     <line x1="20" y1="35" x2="820" y2="35" />
     <line x1="20" y1="70" x2="820" y2="70" />
     <line x1="20" y1="105" x2="820" y2="105" />
@@ -61,67 +65,71 @@
     <line x1="210" y1="15" x2="210" y2="195" />
   </g>
 
-  <!-- Radial Glow Behind Icon -->
-  <circle cx="105" cy="105" r="95" fill="url(#radial-glow)" />
+  <!-- Gemini Radial Ambience Glow Behind Icon -->
+  <circle cx="105" cy="105" r="100" fill="url(#gemini-glow)" />
 
-  <!-- ==================== ICON: THE WRIGHT MARK ==================== -->
+  <!-- ==================== ICON: THE WRIGHT MARK (GEMINI PALETTE) ==================== -->
   <g transform="translate(10, 0)">
     <!-- Outer Hexagonal Blueprint Ring -->
     <polygon points="95,35 142,62 142,116 95,143 48,116 48,62" 
-             fill="none" stroke="#251F2F" stroke-width="1.5" stroke-dasharray="4 3" />
+             fill="none" stroke="#1E273A" stroke-width="1.5" stroke-dasharray="4 3" />
     
     <polygon points="95,41 136,65 136,113 95,137 54,113 54,65" 
-             fill="#14101A" fill-opacity="0.6" stroke="#3A3047" stroke-width="1" />
+             fill="#0E1422" fill-opacity="0.7" stroke="#2D384E" stroke-width="1" />
 
     <!-- Orbital Coordination Traces -->
-    <path d="M95,41 L136,113 M54,113 L95,41" stroke="#F59E0B" stroke-opacity="0.25" stroke-width="1" />
+    <path d="M95,41 L136,113 M54,113 L95,41" stroke="#6366F1" stroke-opacity="0.3" stroke-width="1" />
 
-    <!-- Central Geometric "W" / Builder Keel -->
+    <!-- Central Geometric "W" / Shipwright Keel -->
     <path d="M68,69 L78,109 L88,83 L95,97 L102,83 L112,109 L122,69" 
-          fill="none" stroke="url(#icon-grad)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+          fill="none" stroke="url(#gemini-icon-grad)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
     
     <!-- Architect Scaffolding Crossbar -->
-    <line x1="74" y1="95" x2="116" y2="95" stroke="#F59E0B" stroke-width="1.5" stroke-opacity="0.8" stroke-dasharray="2 2" />
+    <line x1="74" y1="95" x2="116" y2="95" stroke="#A855F7" stroke-width="1.5" stroke-opacity="0.7" stroke-dasharray="2 2" />
     
     <!-- Center Terminal Prompt Symbol `>_` inside the Keel -->
-    <path d="M91,113 L96,118 L91,123" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-    <line x1="99" y1="123" x2="104" y2="123" stroke="#FB7185" stroke-width="2" stroke-linecap="round" />
+    <path d="M91,113 L96,118 L91,123" fill="none" stroke="#4285F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    <line x1="99" y1="123" x2="104" y2="123" stroke="#EC4899" stroke-width="2" stroke-linecap="round" />
 
-    <!-- Specialist Sub-Agent Orbital Nodes -->
-    <!-- Node 1: Planner (Top / Amber Gold) -->
-    <circle cx="95" cy="41" r="5" fill="#14101A" stroke="#F59E0B" stroke-width="2" />
-    <circle cx="95" cy="41" r="2" fill="#FDE68A" />
+    <!-- Gemini Four-Pointed Sparkle Star Accent (Top Center) -->
+    <path d="M95,47 Q95,54 88,54 Q95,54 95,61 Q95,54 102,54 Q95,54 95,47 Z" 
+          fill="url(#gemini-title-grad)" opacity="0.9" />
+
+    <!-- Specialist Sub-Agent Orbital Nodes (Gemini Tiers) -->
+    <!-- Node 1: Planner (Top / Gemini Violet) -->
+    <circle cx="95" cy="41" r="5" fill="#0E1422" stroke="#9333EA" stroke-width="2" />
+    <circle cx="95" cy="41" r="2" fill="#C084FC" />
     
-    <!-- Node 2: Coder (Bottom-Right / Incandescent Orange) -->
-    <circle cx="136" cy="113" r="5" fill="#14101A" stroke="#FB923C" stroke-width="2" />
-    <circle cx="136" cy="113" r="2" fill="#FED7AA" />
+    <!-- Node 2: Coder (Bottom-Right / Gemini Electric Blue) -->
+    <circle cx="136" cy="113" r="5" fill="#0E1422" stroke="#4285F4" stroke-width="2" />
+    <circle cx="136" cy="113" r="2" fill="#93C5FD" />
 
-    <!-- Node 3: Reviewer / Tester (Bottom-Left / Coral Rose) -->
-    <circle cx="54" cy="113" r="5" fill="#14101A" stroke="#F43F5E" stroke-width="2" />
-    <circle cx="54" cy="113" r="2" fill="#FECDD3" />
+    <!-- Node 3: Reviewer / Tester (Bottom-Left / Gemini Fuchsia Pink) -->
+    <circle cx="54" cy="113" r="5" fill="#0E1422" stroke="#EC4899" stroke-width="2" />
+    <circle cx="54" cy="113" r="2" fill="#F472B6" />
 
-    <!-- Small Spark Data Particles -->
-    <circle cx="84" cy="61" r="1.5" fill="#F59E0B" opacity="0.8" />
-    <circle cx="106" cy="61" r="1.5" fill="#FB923C" opacity="0.8" />
-    <circle cx="95" cy="135" r="1.5" fill="#F43F5E" opacity="0.8" />
+    <!-- Sparkle Particles -->
+    <circle cx="84" cy="61" r="1.5" fill="#4285F4" opacity="0.85" />
+    <circle cx="106" cy="61" r="1.5" fill="#A855F7" opacity="0.85" />
+    <circle cx="95" cy="135" r="1.5" fill="#EC4899" opacity="0.85" />
   </g>
 
   <!-- ==================== TYPOGRAPHY & DETAILS ==================== -->
   <g transform="translate(185, 0)">
     <!-- Top Pill: Status & Category -->
     <g transform="translate(0, 32)">
-      <!-- Pill 1 -->
-      <rect x="0" y="0" width="130" height="22" rx="11" fill="#201A29" fill-opacity="0.8" stroke="#3A3047" stroke-width="1" />
-      <circle cx="12" cy="11" r="3.5" fill="#F59E0B" />
-      <circle cx="12" cy="11" r="6" fill="#F59E0B" fill-opacity="0.25" />
+      <!-- Pill 1: Gemini Gradient Border -->
+      <rect x="0" y="0" width="130" height="22" rx="11" fill="#181E2E" fill-opacity="0.8" stroke="#334155" stroke-width="1" />
+      <circle cx="12" cy="11" r="3.5" fill="#4285F4" />
+      <circle cx="12" cy="11" r="6" fill="#4285F4" fill-opacity="0.25" />
       <text x="24" y="15" class="mono badge-text">AGENT SKILL</text>
 
       <!-- Pill 2 -->
-      <rect x="138" y="0" width="156" height="22" rx="11" fill="#201A29" fill-opacity="0.5" stroke="#3A3047" stroke-width="1" stroke-dasharray="3 2" />
+      <rect x="138" y="0" width="156" height="22" rx="11" fill="#181E2E" fill-opacity="0.5" stroke="#334155" stroke-width="1" stroke-dasharray="3 2" />
       <text x="149" y="15" class="mono badge-text">MULTI-AGENT CREW</text>
 
       <!-- Pill 3 -->
-      <rect x="302" y="0" width="156" height="22" rx="11" fill="#201A29" fill-opacity="0.5" stroke="#3A3047" stroke-width="1" />
+      <rect x="302" y="0" width="156" height="22" rx="11" fill="#181E2E" fill-opacity="0.5" stroke="#334155" stroke-width="1" />
       <text x="313" y="15" class="mono badge-text">SKILLS.SH READY</text>
     </g>
 
@@ -140,23 +148,23 @@
     <!-- Bottom Interactive Install Prompt & Feature Tags -->
     <g transform="translate(0, 146)">
       <!-- Terminal Command Box -->
-      <rect x="0" y="0" width="375" height="34" rx="7" fill="#08070B" stroke="#251F2F" stroke-width="1" />
+      <rect x="0" y="0" width="375" height="34" rx="7" fill="#0A0E17" stroke="#1E273A" stroke-width="1" />
       
       <!-- Traffic lights -->
       <circle cx="14" cy="17" r="3" fill="#EF4444" opacity="0.8" />
       <circle cx="23" cy="17" r="3" fill="#F59E0B" opacity="0.8" />
       <circle cx="32" cy="17" r="3" fill="#10B981" opacity="0.8" />
       
-      <!-- Command text -->
+      <!-- Command text with Gemini Accents -->
       <text x="46" y="22" class="mono">
         <tspan class="code-prompt">$ </tspan>
         <tspan class="code-cmd">npx skills add </tspan>
         <tspan class="code-arg">&lt;user&gt;/crew-wright</tspan>
       </text>
 
-      <!-- Clean Feature Tags on the right -->
+      <!-- Feature Tags on the right with Gemini indigo border -->
       <g transform="translate(390, 0)">
-        <rect x="0" y="0" width="235" height="34" rx="7" fill="#120E18" stroke="#251F2F" stroke-width="1" />
+        <rect x="0" y="0" width="235" height="34" rx="7" fill="#101524" stroke="#252F47" stroke-width="1" />
         <text x="117" y="21" class="mono feature-tag" text-anchor="middle">
           CONTRACT • REVIEW • TESTS
         </text>
