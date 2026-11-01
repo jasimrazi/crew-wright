@@ -25,13 +25,13 @@ Install `crew-wright` into your coding agent with the [skills CLI](https://www.n
 
 ```bash
 # Install to your current project
-npx skills add <YOUR-GITHUB-USER>/crew-wright
+npx skills add jasimrazi/crew-wright
 
 # Install globally for all projects (-g)
-npx skills add <YOUR-GITHUB-USER>/crew-wright -g
+npx skills add jasimrazi/crew-wright -g
 
 # Install only the crew-wright skill from a multi-skill repository
-npx skills add <YOUR-GITHUB-USER>/crew-wright@crew-wright
+npx skills add jasimrazi/crew-wright@crew-wright
 
 # Test or install locally from source
 npx skills add ./skills/crew-wright
