@@ -159,7 +159,7 @@
       <text x="46" y="22" class="mono">
         <tspan class="code-prompt">$ </tspan>
         <tspan class="code-cmd">npx skills add </tspan>
-        <tspan class="code-arg">&lt;user&gt;/crew-wright</tspan>
+        <tspan class="code-arg">jasimrazi/crew-wright</tspan>
       </text>
 
       <!-- Feature Tags on the right with Lavender outline -->
