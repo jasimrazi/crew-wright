@@ -13,29 +13,29 @@
       <stop offset="100%" stop-color="#36304A" />
     </linearGradient>
 
-    <!-- Title & Icon Gradient: Soft Lavender -> Vibrant Electric Acid Yellow -->
-    <linearGradient id="yellow-lavender-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <!-- Title & Icon Gradient: Soft Lavender -> Vibrant Spotify Green -->
+    <linearGradient id="spotify-lavender-grad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#9F88F0" />
       <stop offset="45%" stop-color="#C4B5FD" />
-      <stop offset="85%" stop-color="#EEFC00" />
-      <stop offset="100%" stop-color="#E2F934" />
+      <stop offset="85%" stop-color="#1ED760" />
+      <stop offset="100%" stop-color="#1DB954" />
     </linearGradient>
 
     <linearGradient id="icon-grad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#8B72E8" />
       <stop offset="50%" stop-color="#A78BFA" />
-      <stop offset="100%" stop-color="#EEFC00" />
+      <stop offset="100%" stop-color="#1ED760" />
     </linearGradient>
 
-    <!-- Dual Radial Ambience Glow: Lavender + Acid Yellow -->
+    <!-- Dual Radial Ambience Glow: Lavender + Spotify Green -->
     <radialGradient id="radial-glow-lavender" cx="95" cy="105" r="95" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#9F88F0" stop-opacity="0.18" />
       <stop offset="60%" stop-color="#8B72E8" stop-opacity="0.04" />
       <stop offset="100%" stop-color="#08080B" stop-opacity="0" />
     </radialGradient>
 
-    <radialGradient id="radial-glow-yellow" cx="440" cy="100" r="140" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#EEFC00" stop-opacity="0.06" />
+    <radialGradient id="radial-glow-green" cx="440" cy="100" r="140" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1ED760" stop-opacity="0.08" />
       <stop offset="100%" stop-color="#08080B" stop-opacity="0" />
     </radialGradient>
   </defs>
@@ -44,10 +44,10 @@
     .mono { font-family: ui-monospace, SFMono-Regular, "JetBrains Mono", Menlo, Consolas, monospace; }
     .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, sans-serif; }
     .title-crew { font-weight: 800; font-size: 42px; fill: #FFFFFF; letter-spacing: -0.5px; }
-    .title-wright { font-weight: 800; font-size: 42px; fill: url(#yellow-lavender-grad); letter-spacing: -0.5px; }
+    .title-wright { font-weight: 800; font-size: 42px; fill: url(#spotify-lavender-grad); letter-spacing: -0.5px; }
     .badge-text { font-size: 10px; font-weight: 600; fill: #C4B5FD; letter-spacing: 0.8px; }
     .subtext { font-size: 13.5px; fill: #A5A1B8; font-weight: 400; }
-    .code-prompt { font-size: 13px; font-weight: 600; fill: #EEFC00; }
+    .code-prompt { font-size: 13px; font-weight: 600; fill: #1ED760; }
     .code-cmd { font-size: 13px; font-weight: 500; fill: #F8FAFC; }
     .code-arg { font-size: 13px; font-weight: 500; fill: #C4B5FD; }
     .feature-tag { font-size: 11px; font-weight: 500; fill: #E2E8F0; }
@@ -58,7 +58,7 @@
 
   <!-- Ambient Glow Layers -->
   <circle cx="105" cy="105" r="95" fill="url(#radial-glow-lavender)" />
-  <circle cx="440" cy="100" r="140" fill="url(#radial-glow-yellow)" />
+  <circle cx="440" cy="100" r="140" fill="url(#radial-glow-green)" />
 
   <!-- Subtle Blueprint Grid Pattern in Background -->
   <g opacity="0.04" stroke="#C4B5FD" stroke-width="1">
@@ -89,16 +89,16 @@
           fill="none" stroke="url(#icon-grad)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
     
     <!-- Architect Scaffolding Crossbar -->
-    <line x1="74" y1="95" x2="116" y2="95" stroke="#EEFC00" stroke-width="1.5" stroke-opacity="0.8" stroke-dasharray="2 2" />
+    <line x1="74" y1="95" x2="116" y2="95" stroke="#1ED760" stroke-width="1.5" stroke-opacity="0.8" stroke-dasharray="2 2" />
     
     <!-- Center Terminal Prompt Symbol `>_` inside the Keel -->
-    <path d="M91,113 L96,118 L91,123" fill="none" stroke="#EEFC00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M91,113 L96,118 L91,123" fill="none" stroke="#1ED760" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
     <line x1="99" y1="123" x2="104" y2="123" stroke="#C4B5FD" stroke-width="2" stroke-linecap="round" />
 
     <!-- Specialist Sub-Agent Orbital Nodes -->
-    <!-- Node 1: Top (Electric Acid Yellow) -->
-    <circle cx="95" cy="41" r="5" fill="#0E0B17" stroke="#EEFC00" stroke-width="2" />
-    <circle cx="95" cy="41" r="2" fill="#F7FF66" />
+    <!-- Node 1: Top (Spotify Green) -->
+    <circle cx="95" cy="41" r="5" fill="#0E0B17" stroke="#1ED760" stroke-width="2" />
+    <circle cx="95" cy="41" r="2" fill="#57E785" />
     
     <!-- Node 2: Bottom-Right (Soft Lavender) -->
     <circle cx="136" cy="113" r="5" fill="#0E0B17" stroke="#9F88F0" stroke-width="2" />
@@ -109,9 +109,9 @@
     <circle cx="54" cy="113" r="2" fill="#E2E8F0" />
 
     <!-- Accent Sparkle Particles -->
-    <circle cx="84" cy="61" r="1.5" fill="#EEFC00" opacity="0.9" />
+    <circle cx="84" cy="61" r="1.5" fill="#1ED760" opacity="0.9" />
     <circle cx="106" cy="61" r="1.5" fill="#C4B5FD" opacity="0.9" />
-    <circle cx="95" cy="135" r="1.5" fill="#EEFC00" opacity="0.9" />
+    <circle cx="95" cy="135" r="1.5" fill="#1ED760" opacity="0.9" />
   </g>
 
   <!-- ==================== TYPOGRAPHY & DETAILS ==================== -->
@@ -120,8 +120,8 @@
     <g transform="translate(0, 32)">
       <!-- Pill 1: Status -->
       <rect x="0" y="0" width="130" height="22" rx="11" fill="#171324" fill-opacity="0.85" stroke="#322B4A" stroke-width="1" />
-      <circle cx="12" cy="11" r="3.5" fill="#EEFC00" />
-      <circle cx="12" cy="11" r="6" fill="#EEFC00" fill-opacity="0.25" />
+      <circle cx="12" cy="11" r="3.5" fill="#1ED760" />
+      <circle cx="12" cy="11" r="6" fill="#1ED760" fill-opacity="0.25" />
       <text x="24" y="15" class="mono badge-text">AGENT SKILL</text>
 
       <!-- Pill 2: Architecture -->
@@ -133,7 +133,7 @@
       <text x="313" y="15" class="mono badge-text">SKILLS.SH READY</text>
     </g>
 
-    <!-- Main Title: White "crew-" + Lavender-to-Acid-Yellow "wright" -->
+    <!-- Main Title: White "crew-" + Lavender-to-Spotify-Green "wright" -->
     <g transform="translate(0, 96)">
       <text class="sans">
         <tspan class="title-crew">crew-</tspan><tspan class="title-wright">wright</tspan>
@@ -152,8 +152,8 @@
       
       <!-- Traffic lights -->
       <circle cx="14" cy="17" r="3" fill="#EF4444" opacity="0.8" />
-      <circle cx="23" cy="17" r="3" fill="#EEFC00" opacity="0.8" />
-      <circle cx="32" cy="17" r="3" fill="#10B981" opacity="0.8" />
+      <circle cx="23" cy="17" r="3" fill="#F59E0B" opacity="0.8" />
+      <circle cx="32" cy="17" r="3" fill="#1ED760" opacity="0.8" />
       
       <!-- Command text -->
       <text x="46" y="22" class="mono">
