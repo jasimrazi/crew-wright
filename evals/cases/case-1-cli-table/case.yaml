@@ -1,0 +1,54 @@
+name: case-1-cli-table
+description: CLI Markdown table formatter and sorter with stdin stream handling
+tier: medium
+preset: medium
+
+assertions:
+  - id: crew_artifacts_exist
+    description: Crew coordination artifacts created in .crew/
+    type: file_exists
+    files:
+      - .crew/contract.md
+      - .crew/plan.json
+      - .crew/state.json
+      - .crew/review.md
+      - .crew/test-report.md
+
+  - id: plan_disjoint_ownership
+    description: All parallel tasks in plan.json specify non-overlapping files_owned
+    type: json_property
+    file: .crew/plan.json
+    rule: disjoint_parallel_files
+
+  - id: contract_signatures_defined
+    description: contract.md specifies shared interfaces, CLI flags, and acceptance criteria
+    type: content_contains
+    file: .crew/contract.md
+    patterns:
+      - "Done-Criteria"
+      - "Shared Interfaces"
+      - "Acceptance Criteria"
+      - "File Ownership Map"
+
+  - id: blind_review_conducted
+    description: review.md contains findings with severity tags (MUST-FIX, SHOULD-FIX, NIT) and coordinates
+    type: content_contains
+    file: .crew/review.md
+    patterns:
+      - "MUST-FIX"
+      - "SHOULD-FIX"
+      - "Location:"
+
+  - id: test_evidence_captured
+    description: test-report.md contains actual command execution output with exit code 0
+    type: content_contains
+    file: .crew/test-report.md
+    patterns:
+      - "Raw Terminal Output"
+      - "Exit Code"
+      - "pass"
+
+  - id: automated_test_passes
+    description: Automated test suite executes successfully in terminal
+    type: command_exit_zero
+    command: node --test tests/*.test.js

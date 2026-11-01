@@ -1,0 +1,45 @@
+name: case-2-auth-api
+description: REST API with token authentication, route authorization, and payload validation
+tier: large
+preset: large
+
+assertions:
+  - id: crew_artifacts_exist
+    description: Core crew artifacts and security audit report created
+    type: file_exists
+    files:
+      - .crew/contract.md
+      - .crew/plan.json
+      - .crew/state.json
+      - .crew/security-report.md
+      - .crew/review.md
+      - .crew/test-report.md
+
+  - id: security_role_triggered
+    description: Because auth is involved, security review must audit endpoints and token validation
+    type: content_contains
+    file: .crew/security-report.md
+    patterns:
+      - "Vulnerability Class"
+      - "Exploitation Vector"
+      - "Remediation"
+
+  - id: plan_modular_ownership
+    description: Separate tasks for auth middleware, note repository, and HTTP routes with disjoint files
+    type: json_property
+    file: .crew/plan.json
+    rule: disjoint_parallel_files
+
+  - id: auth_tests_included
+    description: Tests verify 401 unauthenticated, 403 unauthorized, and 200/201 success paths
+    type: content_contains
+    file: .crew/test-report.md
+    patterns:
+      - "401"
+      - "403"
+      - "token"
+
+  - id: automated_test_passes
+    description: Automated test suite passes completely
+    type: command_exit_zero
+    command: npm test || node --test tests/*.test.js

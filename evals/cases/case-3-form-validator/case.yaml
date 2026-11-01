@@ -1,0 +1,36 @@
+name: case-3-form-validator
+description: Web registration form with schema-based validation and accessible UI state
+tier: medium
+preset: medium
+
+assertions:
+  - id: crew_artifacts_exist
+    description: Crew coordination artifacts created in .crew/
+    type: file_exists
+    files:
+      - .crew/contract.md
+      - .crew/plan.json
+      - .crew/state.json
+      - .crew/review.md
+      - .crew/test-report.md
+
+  - id: decoupled_architecture
+    description: Separate files for pure validation logic and DOM UI handling
+    type: json_property
+    file: .crew/plan.json
+    rule: disjoint_parallel_files
+
+  - id: validation_contract_defined
+    description: contract.md defines field regex patterns and error messages
+    type: content_contains
+    file: .crew/contract.md
+    patterns:
+      - "username"
+      - "password"
+      - "email"
+      - "Validation"
+
+  - id: automated_test_passes
+    description: Unit test suite for validation rules executes with exit code 0
+    type: command_exit_zero
+    command: node --test tests/*.test.js
