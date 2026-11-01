@@ -1,61 +1,67 @@
 <p align="center">
-  <img src="assets/logo.svg" alt="crew-wright logo" width="100%" style="max-width: 840px;" />
+  <img src="assets/logo.svg" alt="crew-wright logo: multi-agent orchestration skill for AI coding agents" width="840" />
 </p>
 
-# crew-wright: a multi-agent crew for your coding agent
+# crew-wright: multi-agent orchestration skill for Claude Code, Codex and AI coding agents
 
-`crew-wright` is an open-source agent skill that orchestrates a coordinated team of specialist sub-agents to deliver non-trivial software engineering tasks from start to finish. Instead of relying on a single context window to juggle architecture, implementation, critique, and testing all at once, `crew-wright` decomposes the goal into bounded task waves, assigns specialized roles (planners, designers, modular coders, blind reviewers, testers, security auditors), coordinates shared interfaces via a binding contract, and enforces evidence-based verification before anything is marked done.
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Agent Skill](https://img.shields.io/badge/agent%20skill-SKILL.md-blue.svg)](skills/crew-wright/SKILL.md)
 
-> **Why the name?** A *wright* is a builder or craftsman—like a playwright who crafts plays or a shipwright who builds vessels. `crew-wright` builds and runs an expert crew tailored specifically to your software task.
+**`crew-wright` is an open-source agent skill that turns one AI coding agent into a coordinated team of specialist sub-agents.** Instead of relying on a single context window to juggle architecture, implementation, code review and testing at once, it breaks the goal into bounded task waves and assigns specialized roles: planners, designers, modular coders, blind reviewers, testers and security reviewers. Parallel agents share a binding contract, own separate files, and nothing is marked done until the tests have actually been run and the real output recorded.
+
+> **Why the name?** A *wright* is a builder or craftsman, like a playwright who crafts plays or a shipwright who builds vessels. `crew-wright` builds and runs a crew tailored to your software task.
 >
-> **Independence Notice**: `crew-wright` is an independent, open-source project. It is not affiliated with, sponsored by, or associated with CrewAI Inc. or any other commercial "crew" framework.
+> **Independence notice:** `crew-wright` is an independent, open-source project. It is not affiliated with, sponsored by, or associated with CrewAI Inc. or any other "crew" framework.
 
 <p align="center">
-  <img src="assets/features.svg" alt="crew-wright architecture and core pillars" width="100%" style="max-width: 840px;" />
+  <img src="assets/features.svg" alt="crew-wright architecture: specialist sub-agents, shared contract, file ownership, blind review and evidence-gated testing" width="840" />
 </p>
 
 ---
 
-## Quick Start & Installation
+## Install crew-wright
 
-Install `crew-wright` into your coding agent environment using the Vercel Skills CLI (`skills`). It automatically discovers the skill definition from GitHub or your local path:
+Install `crew-wright` into your coding agent with the [skills CLI](https://www.npmjs.com/package/skills), which finds the skill definition in a GitHub repo or a local path:
 
 ```bash
-# Install to your current project repository
+# Install to your current project
 npx skills add <YOUR-GITHUB-USER>/crew-wright
 
-# Install globally for all project workspaces (-g)
+# Install globally for all projects (-g)
 npx skills add <YOUR-GITHUB-USER>/crew-wright -g
 
-# Install only the crew-wright skill if part of a multi-skill repository
+# Install only the crew-wright skill from a multi-skill repository
 npx skills add <YOUR-GITHUB-USER>/crew-wright@crew-wright
 
-# Test / install locally from source
+# Test or install locally from source
 npx skills add ./skills/crew-wright
+
+# Confirm it is installed
+npx skills list
 ```
 
-Supported coding agents include **Claude Code**, **Google Antigravity**, **Codex**, **OpenCode**, and any environment compatible with the agent skills specification.
+It works with coding agents the skills CLI supports, such as **Claude Code** and **Codex**, and with other tools that follow the [Agent Skills](https://agentskills.io) `SKILL.md` format.
 
 ---
 
-## How to Trigger
+## How to use crew-wright: example prompts
 
-The skill is designed to activate automatically when a task requires coordination, planning, and multi-pass rigor. You can trigger it naturally with prompts such as:
+The skill activates when a task needs coordination, planning and multi-pass checking. Prompts like these trigger it naturally:
 
 1. *"Assemble a crew of specialist agents to build a high-performance Markdown table formatter CLI in TypeScript with full test coverage."*
 2. *"Run a multi-agent team to implement token-based authentication and rate limiting for our Express REST API. Do a blind review and security audit before declaring done."*
 3. *"Plan, build, review, and test a responsive customer checkout form with client-side validation using parallel sub-agents."*
 
-*(For quick one-line bug fixes or single-file changes, the skill deliberately steps aside to avoid unnecessary agent coordination overhead.)*
+*(For quick one-line bug fixes or single-file changes, the skill steps aside to avoid unnecessary coordination overhead.)*
 
 ---
 
-## Lifecycle Phase Diagram
+## How the multi-agent workflow works: 8 phases
 
-`crew-wright` moves through 8 well-defined phases to ensure quality and prevent parallel work collisions:
+`crew-wright` moves through 8 phases to keep quality high and stop parallel agents from colliding:
 
 <p align="center">
-  <img src="assets/workflow.svg" alt="crew-wright 8-phase lifecycle pipeline" width="100%" style="max-width: 840px;" />
+  <img src="assets/workflow.svg" alt="crew-wright 8-phase workflow: triage, plan, contract, wave build, blind review, evidence-gated testing, fix loop and final gate" width="840" />
 </p>
 
 ```text
@@ -77,7 +83,7 @@ The skill is designed to activate automatically when a task requires coordinatio
                                     v
 +-------------------------------------------------------------------------+
 | Phase 2: Interface Contract                                             |
-| - Populate .crew/contract.md (shared interfaces, schemas, rulings)     |
+| - Populate .crew/contract.md (shared interfaces, schemas, rulings)      |
 | - Numbered rulings log resolves ambiguities; all sub-agents read this   |
 +-------------------------------------------------------------------------+
                                     |
@@ -93,9 +99,9 @@ The skill is designed to activate automatically when a task requires coordinatio
                                     v
 +-------------------------------------------------------------------------+
 | Phase 4: Blind Review                                                   |
-| - Reviewer inspects diff & contract WITHOUT coder self-summaries       |
+| - Reviewer inspects diff & contract WITHOUT coder self-summaries        |
 | - Large preset: 2 reviewers with different lenses (correctness vs arch) |
-| - Security Auditor inspects auth, payments, shell/SQL, and inputs      |
+| - Security reviewer inspects auth, payments, shell/SQL, and inputs      |
 | - Findings tagged MUST-FIX / SHOULD-FIX / NIT with file coordinates     |
 +-------------------------------------------------------------------------+
                                     |
@@ -104,15 +110,15 @@ The skill is designed to activate automatically when a task requires coordinatio
 | Phase 5: Evidence-Gated Testing                                         |
 | - Tester writes & executes tests; logs raw output to test-report.md     |
 | - "Done" requires real command output and exit code 0                   |
-| - Orchestrator re-runs test command independently to verify evidence   |
-| - Large preset: test-the-tests mutation check (proves tests catch bugs) |
+| - Orchestrator re-runs test command independently to verify evidence    |
+| - Large preset: test-the-tests check (proves tests catch planted bugs)  |
 +-------------------------------------------------------------------------+
                                     |
                                     v
 +-------------------------------------------------------------------------+
 | Phase 6: Fix Loop (Capped at 2 Rounds)                                  |
 | - Triage MUST-FIX issues to responsible coders by file ownership        |
-| - Re-test; stop and report if issues persist after 2 rounds            |
+| - Re-test; stop and report if issues persist after 2 rounds             |
 +-------------------------------------------------------------------------+
                                     |
                                     v
@@ -125,23 +131,23 @@ The skill is designed to activate automatically when a task requires coordinatio
 
 ---
 
-## Presets & Cost Expectations
+## Presets: small, medium and large crews
 
-`crew-wright` abstracts models into three generic intelligence tiers: **Strong** (high reasoning for planning, blind review, security), **Standard** (efficient coding, interface design, testing), and **Cheap** (high-throughput external research).
+`crew-wright` describes models as three generic tiers instead of naming vendors: **Strong** (planning, blind review, security), **Standard** (coding, interface design, testing, docs) and **Cheap** (research and routine lookups).
 
-| Preset | Target Scope | Active Specialist Roles | Expected Cost & Concurrency |
+| Preset | Target scope | Active specialist roles | Typical parallel agents |
 | :--- | :--- | :--- | :--- |
-| **Small** | 1–3 files, focused components, localized utilities | Planner (inline), 1 Coder, 1 Tester | Minimal (~$0.05–$0.20), 1–2 sequential/parallel calls |
-| **Medium** | 3–10 files, standalone features, standard REST APIs | Planner, Designer, Coders (by module), 1 Reviewer, 1 Tester | Moderate (~$0.50–$1.50), 2–4 parallel agents in waves |
-| **Large** | Full systems, multi-module apps, auth/security surfaces | Planner, Researcher, Designer, Coders (by module), Integrator, 2 Blind Reviewers, Security, Tester, Docs | Comprehensive (~$2.00–$6.00), 4–8 parallel agents across waves |
+| **Small** | 1–3 files, focused components, small utilities | Planner (inline), 1 Coder, 1 Tester | 1–2 |
+| **Medium** | 3–10 files, standalone features, standard REST APIs | Planner, Designer, Coders (by module), 1 Reviewer, 1 Tester | 2–4 per wave |
+| **Large** | Full systems, multi-module apps, auth and security surfaces | Planner, Researcher, Designer, Coders (by module), Integrator, 2 Blind Reviewers, Security, Tester, Docs | 4–8 per wave |
 
-*For Medium and Large presets, the orchestrator always tells you the planned roles and estimated cost, requesting your confirmation before spawning sub-agents.*
+*A crew run costs several times the tokens of a single pass, and the cost grows with the preset, so measure it on your own tasks. For Medium and Large runs, the orchestrator tells you the planned roles and rough cost and asks for confirmation before spawning sub-agents.*
 
 ---
 
-## Custom Roles (`.crew/roles/`)
+## Add custom agent roles (`.crew/roles/`)
 
-Need a specialized Database Administrator, Performance Benchmarker, or Compliance Auditor? You can override standard roles or introduce brand-new specialists by adding markdown files to `.crew/roles/`:
+Need a database administrator, performance benchmarker or compliance reviewer? Override the standard roles or add new specialists with markdown files in `.crew/roles/`:
 
 ```text
 my-project/
@@ -151,77 +157,95 @@ my-project/
         └── dba.md            # Adds a custom DBA role
 ```
 
-Each role brief template should define:
-1. **Objective**: Exactly one primary goal.
-2. **Context**: Paths to `.crew/contract.md` and relevant code (avoid pasting raw file contents).
-3. **Boundaries**: Explicit whitelist of `files_owned`.
-4. **Output Contract**: Capped at ~200 words plus modified file paths.
-5. **Honesty Clause**: Mandate to report unverified assumptions and failures.
+Each role brief should define:
+1. **Objective**: exactly one primary goal.
+2. **Context**: paths to `.crew/contract.md` and relevant code, not pasted file contents.
+3. **Boundaries**: an explicit list of `files_owned`.
+4. **Output contract**: capped at about 200 words plus modified file paths.
+5. **Honesty clause**: report unverified assumptions and failures.
 
-The orchestrator automatically scans `.crew/roles/` during Phase 0 (Triage).
-
----
-
-## Resumable State
-
-All coordination metadata is preserved in `.crew/state.json`. If your terminal disconnects, a background job times out, or you pause a run, `crew-wright` detects the existing state upon relaunch and offers to resume from the active wave without repeating completed work.
+The orchestrator scans `.crew/roles/` during Phase 0 (triage).
 
 ---
 
-## Comparison with Similar Approaches
+## Resume an interrupted run
 
-| Dimension | Monolithic Agent | Swarms / AutoGen | Static Workflow Skills | `crew-wright` |
-| :--- | :--- | :--- | :--- | :--- |
-| **Context Window** | Monolithic (polluted by chatter & code churn) | Separate agents with high conversational chatter | Single context following fixed linear steps | Clean, isolated contexts per specialist brief |
-| **File Ownership** | Ad-hoc (overwrites self) | Common collisions when working simultaneously | Single sequential author | Enforced disjoint ownership across parallel tasks |
-| **Code Review** | Self-review (blind to own mistakes) | Peer chat (often sycophantic approval) | Post-hoc self-check | True blind review without author self-summaries |
-| **Verification Gate** | Asserts "tests passed" (often unexecuted) | Loose finish condition based on chat sentiment | Checklist based | Evidence-gated: requires real terminal stdout & exit 0 |
-| **Failure Recovery** | Ad-hoc apologetic patching | Potential infinite conversational ping-pong | Limited | Capped 2-round fix loop; reports blockers if stuck |
+Coordination state is saved in `.crew/state.json`. If your terminal disconnects or you pause a run, `crew-wright` finds the saved state on relaunch and offers to resume from the active wave without repeating completed work.
 
 ---
 
-## Evaluation & Benchmarks
+## How crew-wright compares to other multi-agent tools
 
-The `evals/` directory contains 3 realistic evaluation suites:
-- `evals/cases/case-1-cli-table/`: CLI tool parsing stdin/files with alignment and sorting.
-- `evals/cases/case-2-auth-api/`: REST API with Bearer token authentication and payload validation.
-- `evals/cases/case-3-form-validator/`: Interactive form with decoupled validation logic and accessible DOM state.
+Several good projects tackle multi-agent coding, and the right choice depends on your needs.
 
-### Automated Verifier
-Verify any workspace against objective YAML assertions using our evaluation harness:
+| Project | Focus |
+| :--- | :--- |
+| [am-will/swarms](https://github.com/am-will/swarms) | Dependency-aware planning, then parallel waves of sub-agents |
+| [RatherN-t/workflow-skill](https://github.com/RatherN-t/workflow-skill) | Plan, parallel build, adversarial review, test and a readiness gate |
+| [rjmurillo/ai-agents](https://github.com/rjmurillo/ai-agents) | A large toolkit of agent roles, lifecycle commands and governance gates |
+| **`crew-wright`** | A compact skill built around file ownership, a shared contract, blind review and evidence-gated testing, with user-defined roles |
+
+`crew-wright` is not a framework or runtime like CrewAI, AutoGen or LangGraph. It is a skill that your existing coding agent follows.
+
+---
+
+## Evals
+
+The `evals/` directory contains 3 realistic evaluation cases:
+- `evals/cases/case-1-cli-table/`: CLI tool parsing stdin or files, with alignment and sorting.
+- `evals/cases/case-2-auth-api/`: REST API with bearer-token authentication and payload validation.
+- `evals/cases/case-3-form-validator/`: interactive form with separate validation logic and accessible error states.
+
+Check a finished workspace against a case's assertions:
 ```bash
 node evals/evaluate.js --case case-1-cli-table --workspace /path/to/workspace
 ```
+See [evals/README.md](evals/README.md) for how to compare runs with and without the skill.
+
+---
+
+## FAQ
+
+**Does crew-wright work with Claude Code?** Yes. Claude Code supports sub-agents and the Agent Skills format. See [references/adapters.md](skills/crew-wright/references/adapters.md) for the mapping.
+
+**What if my agent has no sub-agents?** `crew-wright` runs the roles one after another in a single session and writes the same `.crew/` files.
+
+**How do parallel agents avoid overwriting each other?** Every task declares `files_owned`, and the orchestrator checks that no file belongs to two tasks in the same wave before work starts.
+
+**What is blind review?** The reviewer gets the contract, acceptance criteria and code, but not the coder's summary, so it judges the work without the author's framing.
+
+**Is it free?** Yes, it is MIT licensed. You pay only for the model usage of the agent you run it in.
 
 ---
 
 ## Limitations
 
-- **Sub-Agent Dependency**: For maximum speed, `crew-wright` relies on environments supporting concurrent sub-agents (e.g., Claude Code, Google Antigravity). In single-agent environments, it falls back to sequential role switching (see [references/adapters.md](skills/crew-wright/references/adapters.md)).
-- **Token Investment**: Running modular planning, blind review, security auditing, and test generation uses roughly 1.8x–2.5x more tokens than a single unverified prompt. It is designed for tasks where correctness matters more than token frugality.
-- **Environment Tooling**: Automated verification requires an executable test environment (e.g., `node`, `python`, `cargo`) on the host system to capture genuine exit codes.
+- **Sub-agent support varies.** Parallel waves need an agent with sub-agents. Otherwise roles run sequentially (see [references/adapters.md](skills/crew-wright/references/adapters.md)).
+- **Higher token use.** Planning, blind review, security review and test generation cost more than a single prompt. Use the small preset, or no crew, for simple work.
+- **Needs a runnable test setup.** Evidence-gated testing requires the relevant runtime (for example `node`, `python` or `cargo`) on the machine to capture real exit codes.
+- **No guarantees.** Reviews and tests lower the risk of defects but do not remove it.
 
 ---
 
-## Repository Structure
+## Repository structure
 
 ```text
 crew-wright/
 ├── README.md                      # Documentation and quick start
 ├── LICENSE                        # MIT License (2026)
 ├── assets/
-│   ├── logo.svg                   # Coder-style logo & header banner
-│   ├── logo-icon.svg              # Standalone geometric crest icon
-│   ├── features.svg               # Core architecture & pillars infographic
-│   └── workflow.svg               # 8-phase quality-gated pipeline graphic
+│   ├── logo.svg                   # Header banner logo
+│   ├── logo-icon.svg              # Standalone icon
+│   ├── features.svg               # Architecture and core pillars graphic
+│   └── workflow.svg               # 8-phase pipeline graphic
 ├── skills/
 │   └── crew-wright/
 │       ├── SKILL.md               # Main orchestrator (under 500 lines)
 │       └── references/
-│           ├── roles.md           # Full brief templates for all 9 roles
+│           ├── roles.md           # Brief templates for all 9 roles
 │           ├── contract-template.md # Template for shared contract
 │           ├── presets.md         # Small / Medium / Large presets & tiers
-│           └── adapters.md        # Concrete mappings for agent harnesses
+│           └── adapters.md        # Mappings for agent harnesses
 ├── evals/
 │   ├── cases/                     # 3 test cases with prompt.md & case.yaml
 │   │   ├── case-1-cli-table/
@@ -230,7 +254,7 @@ crew-wright/
 │   ├── evaluate.js                # Assertion verifier script
 │   └── README.md                  # Benchmark methodology
 └── examples/
-    └── example-run.md             # Complete walkthrough with .crew/ artifacts
+    └── example-run.md             # Walkthrough with .crew/ artifacts
 ```
 
 ---
